@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lead Capture Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            width: 300px;
+            margin: auto;
+            padding: 20px 80px;
+            border-radius: 10px;
+          background: linear-gradient(to right, rgba(106, 17, 203,0.2), rgba(37, 117, 252,0.2));
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            color: white;
+        }
+
+        .form-container:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            transform: scale(1.02);
+            background: linear-gradient(to right, rgba(106, 17, 203,0.5), rgba(37, 117, 252,0.4));
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            font-family: sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color:lightgrey;
+        }
+        input {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            border-radius: 10px;
+            padding: 10px 0;
+            text-indent: 5px;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            margin: 10px auto;
+            width: 50%;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        input[type="submit"]:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Lead Capture Form</h2>
+        <form action="submit.php" method="POST">
+            <label>Name:</label>
+            <input type="text" name="name" id="name" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" id="email" required>
+
+            <label>Company:</label>
+            <input type="text" name="company" id="company" required>
+
+            <label>Phone:</label>
+            <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
