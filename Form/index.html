@@ -7,72 +7,76 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
         }
 
         .form-container {
-            width: 300px;
-            margin: auto;
-            padding: 20px 80px;
-            border-radius: 10px;
-          background: linear-gradient(to right, rgba(106, 17, 203,0.2), rgba(37, 117, 252,0.2));
-            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            color: white;
+            width: 340px;
+            padding: 30px 40px;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #333;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .form-container:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-            transform: scale(1.02);
-            background: linear-gradient(to right, rgba(106, 17, 203,0.5), rgba(37, 117, 252,0.4));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         h2 {
             text-align: center;
-        }
-
-        form {
-            max-width: 400px;
-            margin: auto;
-            font-family: sans-serif;
+            margin-bottom: 20px;
+            color: #444;
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
-            color:lightgrey;
+            margin: 8px 0 5px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
         }
+
         input {
-            display: block;
             width: 100%;
-            margin-bottom: 8px;
-            border-radius: 10px;
-            padding: 10px 0;
-            text-indent: 5px;
+            padding: 10px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
             outline: none;
+            font-size: 14px;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.6);
         }
 
         input[type="submit"] {
-            margin: 10px auto;
-            width: 50%;
-            background: #4CAF50;
+            width: 100%;
+            margin-top: 10px;
+            background: #667eea;
             color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            transition: background 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background: #45a049;
+            background: #5563c1;
         }
     </style>
 </head>
@@ -80,17 +84,17 @@
 <body>
     <div class="form-container">
         <h2>Lead Capture Form</h2>
-        <form action="submit.php" method="POST">
-            <label>Name:</label>
+        <form action="submit.php" method="POST" >
+            <label for="name">Name:</label>
             <input type="text" name="name" id="name" required>
 
-            <label>Email:</label>
+            <label for="email">Email:</label>
             <input type="email" name="email" id="email" required>
 
-            <label>Company:</label>
+            <label for="company">Company:</label>
             <input type="text" name="company" id="company" required>
 
-            <label>Phone:</label>
+            <label for="phone">Phone:</label>
             <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" required>
 
             <input type="submit" value="Submit">
